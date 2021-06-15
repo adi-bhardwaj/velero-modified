@@ -22,8 +22,8 @@ import (
 
 	"k8s.io/klog"
 
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/velero"
 )
 
 func main() {

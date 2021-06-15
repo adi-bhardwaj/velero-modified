@@ -22,9 +22,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	v1 "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/controller"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	v1 "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/controller"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func TestVeleroResourcesExist(t *testing.T) {

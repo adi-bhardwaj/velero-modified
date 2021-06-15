@@ -27,8 +27,8 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func TestServiceAccountActionAppliesTo(t *testing.T) {

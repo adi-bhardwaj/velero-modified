@@ -30,13 +30,13 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/kubernetes/scheme"
 
-	"github.com/vmware-tanzu/velero/internal/storage"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	persistencemocks "github.com/vmware-tanzu/velero/pkg/persistence/mocks"
-	"github.com/vmware-tanzu/velero/pkg/plugin/clientmgmt"
-	pluginmocks "github.com/vmware-tanzu/velero/pkg/plugin/mocks"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/internal/storage"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	persistencemocks "github.com/adi-bhardwaj/velero-modified/pkg/persistence/mocks"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
+	pluginmocks "github.com/adi-bhardwaj/velero-modified/pkg/plugin/mocks"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 var _ = Describe("Backup Storage Location Reconciler", func() {

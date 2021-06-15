@@ -87,10 +87,10 @@ For example, E2E tests can be run from Velero repository roots using the command
     ```bash
     BSL_CONFIG="resourceGroup=$AZURE_BACKUP_RESOURCE_GROUP,storageAccount=$AZURE_STORAGE_ACCOUNT_ID,subscriptionId=$AZURE_BACKUP_SUBSCRIPTION_ID" BSL_BUCKET=<BUCKET_FOR_E2E_TEST_BACKUP> CREDS_FILE=/path/to/azure-creds CLOUD_PROVIDER=azure make test-e2e
     ```
-    Please refer to `velero-plugin-for-microsoft-azure` documentation for instruction to [set up permissions for Velero](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure#set-permissions-for-velero) and to [set up azure storage account and blob container](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure#setup-azure-storage-account-and-blob-container)
+    Please refer to `velero-plugin-for-microsoft-azure` documentation for instruction to [set up permissions for Velero](https://github.com/adi-bhardwaj/velero-modified-plugin-for-microsoft-azure#set-permissions-for-velero) and to [set up azure storage account and blob container](https://github.com/adi-bhardwaj/velero-modified-plugin-for-microsoft-azure#setup-azure-storage-account-and-blob-container)
 1. Run Ginko-focused Restore Multi-API Groups tests using an image built for PR #3133 and Minio as the backup storage location: 
    ```bash
-   BSL_CONFIG="region=minio,s3ForcePathStyle=\"true\",s3Url=http://192.168.1.124:9000" BSL_PREFIX=veldat BSL_BUCKET=velero CREDS_FILE=~/go/src/github.com/vmware-tanzu/velero/frankie-secrets/credentials-minio PLUGIN_PROVIDER=aws VELERO_IMAGE=projects.registry.vmware.com/tanzu_migrator/velero-pr3133:0.0.5 GINKGO_FOCUS="API group versions" make test-e2e
+   BSL_CONFIG="region=minio,s3ForcePathStyle=\"true\",s3Url=http://192.168.1.124:9000" BSL_PREFIX=veldat BSL_BUCKET=velero CREDS_FILE=~/go/src/github.com/adi-bhardwaj/velero-modified/frankie-secrets/credentials-minio PLUGIN_PROVIDER=aws VELERO_IMAGE=projects.registry.vmware.com/tanzu_migrator/velero-pr3133:0.0.5 GINKGO_FOCUS="API group versions" make test-e2e
    ```
 1. Run Velero tests in a kind cluster with AWS (or Minio) as the storage provider and use Microsoft Azure as the storage provider for an additional Backup Storage Location:
     ```bash
@@ -98,7 +98,7 @@ For example, E2E tests can be run from Velero repository roots using the command
       CLOUD_PROVIDER=kind OBJECT_STORE_PROVIDER=aws BSL_BUCKET=<BUCKET_FOR_E2E_TEST_BACKUP> BSL_PREFIX=<PREFIX_UNDER_BUCKET> CREDS_FILE=/path/to/aws-creds \
       ADDITIONAL_OBJECT_STORE_PROVIDER=azure ADDITIONAL_BSL_BUCKET=<BUCKET_FOR_AZURE_BSL> ADDITIONAL_BSL_PREFIX=<PREFIX_UNDER_BUCKET> ADDITIONAL_BSL_CONFIG=<CONFIG_FOR_AZURE_BUCKET> ADDITIONAL_CREDS_FILE=/path/to/azure-creds
     ```
-   Please refer to `velero-plugin-for-microsoft-azure` documentation for instruction to [set up permissions for Velero](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure#set-permissions-for-velero) and to [set up azure storage account and blob container](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure#setup-azure-storage-account-and-blob-container)
+   Please refer to `velero-plugin-for-microsoft-azure` documentation for instruction to [set up permissions for Velero](https://github.com/adi-bhardwaj/velero-modified-plugin-for-microsoft-azure#set-permissions-for-velero) and to [set up azure storage account and blob container](https://github.com/adi-bhardwaj/velero-modified-plugin-for-microsoft-azure#setup-azure-storage-account-and-blob-container)
 
 ## Filtering tests
 

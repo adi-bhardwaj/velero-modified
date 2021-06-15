@@ -23,13 +23,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func TestExecuteForACRDWithAnIntOnAFloat64FieldShouldWork(t *testing.T) {
-	// ref. reopen of https://github.com/vmware-tanzu/velero/issues/2319
+	// ref. reopen of https://github.com/adi-bhardwaj/velero-modified/issues/2319
 
 	b := builder.ForV1CustomResourceDefinition("test.velero.io")
 	// 5 here is just an int value, it could be any other whole number.

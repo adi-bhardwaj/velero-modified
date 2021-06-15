@@ -32,8 +32,8 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
 )
 
 // ErrNotFound is exported for external packages to check for when a file is

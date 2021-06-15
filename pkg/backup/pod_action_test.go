@@ -23,9 +23,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/vmware-tanzu/velero/pkg/kuberesource"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/kuberesource"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func TestPodActionAppliesTo(t *testing.T) {

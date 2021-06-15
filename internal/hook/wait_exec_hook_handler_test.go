@@ -32,9 +32,9 @@ import (
 	"k8s.io/client-go/tools/cache"
 	fcache "k8s.io/client-go/tools/cache/testing"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 type fakeListWatchFactory struct {

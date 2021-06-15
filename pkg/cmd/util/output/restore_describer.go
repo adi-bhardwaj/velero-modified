@@ -29,10 +29,10 @@ import (
 
 	"github.com/fatih/color"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/downloadrequest"
-	clientset "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
-	pkgrestore "github.com/vmware-tanzu/velero/pkg/restore"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/downloadrequest"
+	clientset "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
+	pkgrestore "github.com/adi-bhardwaj/velero-modified/pkg/restore"
 )
 
 func DescribeRestore(ctx context.Context, kbClient kbclient.Client, restore *velerov1api.Restore, podVolumeRestores []velerov1api.PodVolumeRestore, details bool, veleroClient clientset.Interface, insecureSkipTLSVerify bool, caCertFile string) string {

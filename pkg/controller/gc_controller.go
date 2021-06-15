@@ -30,12 +30,12 @@ import (
 
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	pkgbackup "github.com/vmware-tanzu/velero/pkg/backup"
-	velerov1client "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/typed/velero/v1"
-	velerov1informers "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions/velero/v1"
-	velerov1listers "github.com/vmware-tanzu/velero/pkg/generated/listers/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/label"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	pkgbackup "github.com/adi-bhardwaj/velero-modified/pkg/backup"
+	velerov1client "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/typed/velero/v1"
+	velerov1informers "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions/velero/v1"
+	velerov1listers "github.com/adi-bhardwaj/velero-modified/pkg/generated/listers/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/label"
 )
 
 const (

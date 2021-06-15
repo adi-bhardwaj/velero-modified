@@ -29,15 +29,15 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	corev1client "k8s.io/client-go/kubernetes/typed/core/v1"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/buildinfo"
-	velerov1client "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/typed/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/label"
-	"github.com/vmware-tanzu/velero/pkg/plugin/framework"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/restic"
-	"github.com/vmware-tanzu/velero/pkg/util/kube"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/buildinfo"
+	velerov1client "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/typed/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/label"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/framework"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/restic"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/kube"
 )
 
 const (

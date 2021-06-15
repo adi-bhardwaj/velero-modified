@@ -24,8 +24,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/vmware-tanzu/velero/pkg/persistence"
-	persistencemocks "github.com/vmware-tanzu/velero/pkg/persistence/mocks"
+	"github.com/adi-bhardwaj/velero-modified/pkg/persistence"
+	persistencemocks "github.com/adi-bhardwaj/velero-modified/pkg/persistence/mocks"
 
 	"k8s.io/klog"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
@@ -34,7 +34,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
 
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/rest"

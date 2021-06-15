@@ -33,12 +33,12 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/kuberesource"
-	"github.com/vmware-tanzu/velero/pkg/podexec"
-	"github.com/vmware-tanzu/velero/pkg/restic"
-	"github.com/vmware-tanzu/velero/pkg/util/collections"
-	"github.com/vmware-tanzu/velero/pkg/util/kube"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/kuberesource"
+	"github.com/adi-bhardwaj/velero-modified/pkg/podexec"
+	"github.com/adi-bhardwaj/velero-modified/pkg/restic"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/collections"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/kube"
 )
 
 type hookPhase string

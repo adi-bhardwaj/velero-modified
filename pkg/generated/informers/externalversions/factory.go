@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
-	internalinterfaces "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions/internalinterfaces"
-	velero "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions/velero"
+	versioned "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions/internalinterfaces"
+	velero "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions/velero"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

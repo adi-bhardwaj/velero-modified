@@ -33,14 +33,14 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/vmware-tanzu/velero/internal/credentials"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	providermocks "github.com/vmware-tanzu/velero/pkg/plugin/velero/mocks"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
-	"github.com/vmware-tanzu/velero/pkg/util/encode"
-	"github.com/vmware-tanzu/velero/pkg/volume"
+	"github.com/adi-bhardwaj/velero-modified/internal/credentials"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	providermocks "github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero/mocks"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/encode"
+	"github.com/adi-bhardwaj/velero-modified/pkg/volume"
 )
 
 type objectBackupStoreTestHarness struct {

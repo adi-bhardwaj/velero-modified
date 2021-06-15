@@ -27,11 +27,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
 
-	"github.com/vmware-tanzu/velero/internal/credentials"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	velerov1listers "github.com/vmware-tanzu/velero/pkg/generated/listers/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/label"
-	"github.com/vmware-tanzu/velero/pkg/util/filesystem"
+	"github.com/adi-bhardwaj/velero-modified/internal/credentials"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	velerov1listers "github.com/adi-bhardwaj/velero-modified/pkg/generated/listers/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/label"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/filesystem"
 )
 
 const (

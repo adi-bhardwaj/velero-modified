@@ -24,10 +24,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/scheme"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/scheme"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func TestIsReadyToValidate(t *testing.T) {

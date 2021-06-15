@@ -30,12 +30,12 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/discovery"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/test"
-	kubeutil "github.com/vmware-tanzu/velero/pkg/util/kube"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/discovery"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/test"
+	kubeutil "github.com/adi-bhardwaj/velero-modified/pkg/util/kube"
 )
 
 func TestInvokeDeleteItemActionsRunForCorrectItems(t *testing.T) {

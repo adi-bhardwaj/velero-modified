@@ -25,7 +25,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	k8sfake "sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
 )
 
 func NewFakeControllerRuntimeClient(t *testing.T, initObjs ...runtime.Object) client.Client {

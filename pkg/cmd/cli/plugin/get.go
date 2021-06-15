@@ -24,10 +24,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/cli/serverstatus"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/output"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli/serverstatus"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/output"
 )
 
 func NewGetCommand(f client.Factory, use string) *cobra.Command {

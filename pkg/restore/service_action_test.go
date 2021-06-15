@@ -27,10 +27,10 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 func svcJSON(ports ...corev1api.ServicePort) string {

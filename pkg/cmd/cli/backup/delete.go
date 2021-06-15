@@ -26,11 +26,11 @@ import (
 	"k8s.io/apimachinery/pkg/labels"
 	kubeerrs "k8s.io/apimachinery/pkg/util/errors"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/backup"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/cli"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/backup"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli"
 )
 
 // NewDeleteCommand creates a new command that deletes a backup.

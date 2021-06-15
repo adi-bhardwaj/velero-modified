@@ -2,9 +2,9 @@ package netbackup
 
 import (
 	"github.com/sirupsen/logrus"
-	pkgbackup "github.com/vmware-tanzu/velero/pkg/backup"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd/server"
+	pkgbackup "github.com/adi-bhardwaj/velero-modified/pkg/backup"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/server"
 )
 
 const (

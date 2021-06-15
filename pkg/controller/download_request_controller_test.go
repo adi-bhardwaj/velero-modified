@@ -36,12 +36,12 @@ import (
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	persistencemocks "github.com/vmware-tanzu/velero/pkg/persistence/mocks"
-	"github.com/vmware-tanzu/velero/pkg/plugin/clientmgmt"
-	pluginmocks "github.com/vmware-tanzu/velero/pkg/plugin/mocks"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	persistencemocks "github.com/adi-bhardwaj/velero-modified/pkg/persistence/mocks"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
+	pluginmocks "github.com/adi-bhardwaj/velero-modified/pkg/plugin/mocks"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
 )
 
 var _ = Describe("Download Request Reconciler", func() {

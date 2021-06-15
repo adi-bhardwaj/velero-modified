@@ -35,8 +35,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	veleroexec "github.com/vmware-tanzu/velero/pkg/util/exec"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	veleroexec "github.com/adi-bhardwaj/velero-modified/pkg/util/exec"
 )
 
 var _ = Describe("[APIGroup] Velero tests with various CRD API group versions", func() {
@@ -226,7 +226,7 @@ func runEnableAPIGroupVersionsTests(ctx context.Context, client testClient, reso
 			tc.namespaces = append(tc.namespaces, ns)
 		}
 
-		// TODO - Velero needs to be installed AFTER CRDs are installed because of https://github.com/vmware-tanzu/velero/issues/3471
+		// TODO - Velero needs to be installed AFTER CRDs are installed because of https://github.com/adi-bhardwaj/velero-modified/issues/3471
 		// Once that issue is fixed, we should install Velero once for the test suite
 		if installVelero {
 			veleroInstall(context.Background(), veleroImage, veleroNamespace, cloudProvider, objectStoreProvider, false,

@@ -23,6 +23,6 @@ import (
 )
 
 func TestRemoveVeleroPackagePrefix(t *testing.T) {
-	assert.Equal(t, "pkg/foo.go", removeVeleroPackagePrefix("github.com/vmware-tanzu/velero/pkg/foo.go"))
-	assert.Equal(t, "github.com/vmware-tanzu/velero-plugin-example/foo.go", removeVeleroPackagePrefix("github.com/vmware-tanzu/velero-plugin-example/foo.go"))
+	assert.Equal(t, "pkg/foo.go", removeVeleroPackagePrefix("github.com/adi-bhardwaj/velero-modified/pkg/foo.go"))
+	assert.Equal(t, "github.com/adi-bhardwaj/velero-modified-plugin-example/foo.go", removeVeleroPackagePrefix("github.com/adi-bhardwaj/velero-modified-plugin-example/foo.go"))
 }

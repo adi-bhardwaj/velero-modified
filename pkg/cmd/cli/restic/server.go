@@ -24,9 +24,9 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/vmware-tanzu/velero/internal/util/managercontroller"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/metrics"
+	"github.com/adi-bhardwaj/velero-modified/internal/util/managercontroller"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/metrics"
 
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -42,16 +42,16 @@ import (
 
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/vmware-tanzu/velero/internal/credentials"
-	"github.com/vmware-tanzu/velero/pkg/buildinfo"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/signals"
-	"github.com/vmware-tanzu/velero/pkg/controller"
-	clientset "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
-	informers "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions"
-	"github.com/vmware-tanzu/velero/pkg/util/filesystem"
-	"github.com/vmware-tanzu/velero/pkg/util/logging"
+	"github.com/adi-bhardwaj/velero-modified/internal/credentials"
+	"github.com/adi-bhardwaj/velero-modified/pkg/buildinfo"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/signals"
+	"github.com/adi-bhardwaj/velero-modified/pkg/controller"
+	clientset "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
+	informers "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/filesystem"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/logging"
 
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 	"sigs.k8s.io/controller-runtime/pkg/manager"

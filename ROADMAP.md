@@ -1,13 +1,13 @@
 ## Velero Roadmap
 
 ### About this document
-This document provides a link to the [Velero Project boards](https://github.com/vmware-tanzu/velero/projects) that serves as the up to date description of items that are in the release pipeline. The release boards have separate swim lanes based on prioritization. Most items are gathered from the community or include a feedback loop with the community. This should serve as a reference point for Velero users and contributors to understand where the project is heading, and help determine if a contribution could be conflicting with a longer term plan. 
+This document provides a link to the [Velero Project boards](https://github.com/adi-bhardwaj/velero-modified/projects) that serves as the up to date description of items that are in the release pipeline. The release boards have separate swim lanes based on prioritization. Most items are gathered from the community or include a feedback loop with the community. This should serve as a reference point for Velero users and contributors to understand where the project is heading, and help determine if a contribution could be conflicting with a longer term plan. 
 
 ### How to help?
-Discussion on the roadmap can take place in threads under [Issues](https://github.com/vmware-tanzu/velero/issues) or in [community meetings](https://velero.io/community/). Please open and comment on an issue if you want to provide suggestions, use cases, and feedback to an item in the roadmap. Please review the roadmap to avoid potential duplicated effort.
+Discussion on the roadmap can take place in threads under [Issues](https://github.com/adi-bhardwaj/velero-modified/issues) or in [community meetings](https://velero.io/community/). Please open and comment on an issue if you want to provide suggestions, use cases, and feedback to an item in the roadmap. Please review the roadmap to avoid potential duplicated effort.
 
 ### How to add an item to the roadmap?
-One of the most important aspects in any open source community is the concept of proposals. Large changes to the codebase and / or new features should be preceded by a [proposal](https://github.com/vmware-tanzu/velero/blob/main/GOVERNANCE.md#proposal-process) in our repo.
+One of the most important aspects in any open source community is the concept of proposals. Large changes to the codebase and / or new features should be preceded by a [proposal](https://github.com/adi-bhardwaj/velero-modified/blob/main/GOVERNANCE.md#proposal-process) in our repo.
 For smaller enhancements, you can open an issue to track that initiative or feature request.
 We work with and rely on community feedback to focus our efforts to improve Velero and maintain a healthy roadmap.
 
@@ -25,23 +25,23 @@ release and opportunistic items that will be added to the release if possible.
 
 |Issue|Description|
 |---|---|
-|[3493](https://github.com/vmware-tanzu/velero/issues/3493)|[Carvel](https://github.com/vmware-tanzu/velero/issues/3493) based installation (in addition to the existing *velero install* CLI).|
-|[3531](https://github.com/vmware-tanzu/velero/issues/3531)|Test plan for Velero|
-|[675](https://github.com/vmware-tanzu/velero/issues/675)|Velero command to generate debugging information.  Will integrate with [Crashd - Crash Diagnostics](https://github.com/vmware-tanzu/velero/issues/675)|
-|[2066](https://github.com/vmware-tanzu/velero/issues/2066)|CSI Snapshots GA|
-|[3285](https://github.com/vmware-tanzu/velero/issues/3285)|Support Velero plugin versioning|
-|[1975](https://github.com/vmware-tanzu/velero/issues/1975)|IPV6 support|
+|[3493](https://github.com/adi-bhardwaj/velero-modified/issues/3493)|[Carvel](https://github.com/adi-bhardwaj/velero-modified/issues/3493) based installation (in addition to the existing *velero install* CLI).|
+|[3531](https://github.com/adi-bhardwaj/velero-modified/issues/3531)|Test plan for Velero|
+|[675](https://github.com/adi-bhardwaj/velero-modified/issues/675)|Velero command to generate debugging information.  Will integrate with [Crashd - Crash Diagnostics](https://github.com/adi-bhardwaj/velero-modified/issues/675)|
+|[2066](https://github.com/adi-bhardwaj/velero-modified/issues/2066)|CSI Snapshots GA|
+|[3285](https://github.com/adi-bhardwaj/velero-modified/issues/3285)|Support Velero plugin versioning|
+|[1975](https://github.com/adi-bhardwaj/velero-modified/issues/1975)|IPV6 support|
 
 
 
 ##### Desired items
 |Issue|Description|
 |---|---|
-|[3533](https://github.com/vmware-tanzu/velero/issues/3533)|Upload Progress Monitoring|
-|[2922](https://github.com/vmware-tanzu/velero/issues/2922)|Plugin timeouts|
-|[3500](https://github.com/vmware-tanzu/velero/issues/3500)|Use distroless containers as a base|
-|[3535](https://github.com/vmware-tanzu/velero/issues/3535)|Design doc for multiple cluster support|
-|[3536](https://github.com/vmware-tanzu/velero/issues/3536)|Manifest for backup/restore|
+|[3533](https://github.com/adi-bhardwaj/velero-modified/issues/3533)|Upload Progress Monitoring|
+|[2922](https://github.com/adi-bhardwaj/velero-modified/issues/2922)|Plugin timeouts|
+|[3500](https://github.com/adi-bhardwaj/velero-modified/issues/3500)|Use distroless containers as a base|
+|[3535](https://github.com/adi-bhardwaj/velero-modified/issues/3535)|Design doc for multiple cluster support|
+|[3536](https://github.com/adi-bhardwaj/velero-modified/issues/3536)|Manifest for backup/restore|
 
 ##### Opportunistic items
 |Issue|Description|

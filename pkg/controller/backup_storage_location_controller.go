@@ -30,10 +30,10 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/vmware-tanzu/velero/internal/storage"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/persistence"
-	"github.com/vmware-tanzu/velero/pkg/plugin/clientmgmt"
+	"github.com/adi-bhardwaj/velero-modified/internal/storage"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/persistence"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
 )
 
 // BackupStorageLocationReconciler reconciles a BackupStorageLocation object

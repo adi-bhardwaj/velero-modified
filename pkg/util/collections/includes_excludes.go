@@ -24,7 +24,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/sets"
 
-	"github.com/vmware-tanzu/velero/pkg/discovery"
+	"github.com/adi-bhardwaj/velero-modified/pkg/discovery"
 )
 
 type globStringSet struct {
@@ -203,7 +203,7 @@ func GetResourceIncludesExcludes(helper discovery.Helper, includes, excludes []s
 			if err != nil {
 				// If we can't resolve it, return it as-is. This prevents the generated
 				// includes-excludes list from including *everything*, if none of the includes
-				// can be resolved. ref. https://github.com/vmware-tanzu/velero/issues/2461
+				// can be resolved. ref. https://github.com/adi-bhardwaj/velero-modified/issues/2461
 				return item
 			}
 

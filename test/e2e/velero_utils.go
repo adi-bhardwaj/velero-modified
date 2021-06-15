@@ -32,12 +32,12 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	cliinstall "github.com/vmware-tanzu/velero/pkg/cmd/cli/install"
-	"github.com/vmware-tanzu/velero/pkg/cmd/cli/uninstall"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/flag"
-	"github.com/vmware-tanzu/velero/pkg/install"
-	veleroexec "github.com/vmware-tanzu/velero/pkg/util/exec"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	cliinstall "github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli/install"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli/uninstall"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/flag"
+	"github.com/adi-bhardwaj/velero-modified/pkg/install"
+	veleroexec "github.com/adi-bhardwaj/velero-modified/pkg/util/exec"
 )
 
 func getProviderPlugins(providerName string) []string {

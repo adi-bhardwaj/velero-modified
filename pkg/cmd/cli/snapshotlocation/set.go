@@ -26,10 +26,10 @@ import (
 
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/output"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/output"
 )
 
 func NewSetCommand(f client.Factory, use string) *cobra.Command {
@@ -40,7 +40,7 @@ func NewSetCommand(f client.Factory, use string) *cobra.Command {
 		Short: "Set specific features for a snapshot location",
 		Args:  cobra.ExactArgs(1),
 		// Mark this command as hidden until more functionality is added
-		// as part of https://github.com/vmware-tanzu/velero/issues/2426
+		// as part of https://github.com/adi-bhardwaj/velero-modified/issues/2426
 		Hidden: true,
 		Run: func(c *cobra.Command, args []string) {
 			cmd.CheckError(o.Complete(args, f))

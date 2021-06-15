@@ -31,11 +31,11 @@ import (
 	"github.com/fatih/color"
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/downloadrequest"
-	"github.com/vmware-tanzu/velero/pkg/features"
-	clientset "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
-	"github.com/vmware-tanzu/velero/pkg/volume"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/downloadrequest"
+	"github.com/adi-bhardwaj/velero-modified/pkg/features"
+	clientset "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
+	"github.com/adi-bhardwaj/velero-modified/pkg/volume"
 )
 
 // DescribeBackup describes a backup in human-readable format.

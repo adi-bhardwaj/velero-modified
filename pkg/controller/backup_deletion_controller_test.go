@@ -36,19 +36,19 @@ import (
 	core "k8s.io/client-go/testing"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	pkgbackup "github.com/vmware-tanzu/velero/pkg/backup"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/fake"
-	informers "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions"
-	"github.com/vmware-tanzu/velero/pkg/metrics"
-	persistencemocks "github.com/vmware-tanzu/velero/pkg/persistence/mocks"
-	"github.com/vmware-tanzu/velero/pkg/plugin/clientmgmt"
-	pluginmocks "github.com/vmware-tanzu/velero/pkg/plugin/mocks"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero/mocks"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
-	"github.com/vmware-tanzu/velero/pkg/volume"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	pkgbackup "github.com/adi-bhardwaj/velero-modified/pkg/backup"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/fake"
+	informers "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions"
+	"github.com/adi-bhardwaj/velero-modified/pkg/metrics"
+	persistencemocks "github.com/adi-bhardwaj/velero-modified/pkg/persistence/mocks"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
+	pluginmocks "github.com/adi-bhardwaj/velero-modified/pkg/plugin/mocks"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero/mocks"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/volume"
 )
 
 func TestBackupDeletionControllerProcessQueueItem(t *testing.T) {
@@ -471,7 +471,7 @@ func TestBackupDeletionControllerProcessRequest(t *testing.T) {
 
 		// Clear out req labels to make sure the controller adds them and does not
 		// panic when encountering a nil Labels map
-		// (https://github.com/vmware-tanzu/velero/issues/1546)
+		// (https://github.com/adi-bhardwaj/velero-modified/issues/1546)
 		td.req.Labels = nil
 
 		td.client.PrependReactor("get", "backups", func(action core.Action) (bool, runtime.Object, error) {
@@ -773,7 +773,7 @@ func TestBackupDeletionControllerProcessRequest(t *testing.T) {
 
 		// Clear out req labels to make sure the controller adds them and does not
 		// panic when encountering a nil Labels map
-		// (https://github.com/vmware-tanzu/velero/issues/1546)
+		// (https://github.com/adi-bhardwaj/velero-modified/issues/1546)
 		td.req.Labels = nil
 
 		td.client.PrependReactor("get", "backups", func(action core.Action) (bool, runtime.Object, error) {
@@ -903,7 +903,7 @@ func TestBackupDeletionControllerProcessRequest(t *testing.T) {
 
 		// Clear out req labels to make sure the controller adds them and does not
 		// panic when encountering a nil Labels map
-		// (https://github.com/vmware-tanzu/velero/issues/1546)
+		// (https://github.com/adi-bhardwaj/velero-modified/issues/1546)
 		td.req.Labels = nil
 
 		td.client.PrependReactor("get", "backups", func(action core.Action) (bool, runtime.Object, error) {

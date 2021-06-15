@@ -29,14 +29,14 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/vmware-tanzu/velero/internal/storage"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/features"
-	velerov1client "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/typed/velero/v1"
-	velerov1listers "github.com/vmware-tanzu/velero/pkg/generated/listers/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/label"
-	"github.com/vmware-tanzu/velero/pkg/persistence"
-	"github.com/vmware-tanzu/velero/pkg/plugin/clientmgmt"
+	"github.com/adi-bhardwaj/velero-modified/internal/storage"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/features"
+	velerov1client "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/typed/velero/v1"
+	velerov1listers "github.com/adi-bhardwaj/velero-modified/pkg/generated/listers/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/label"
+	"github.com/adi-bhardwaj/velero-modified/pkg/persistence"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
 
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

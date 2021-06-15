@@ -356,13 +356,13 @@ If you get an error like `complete:13: command not found: compdef`, then add the
   compinit
   ```
 
-[1]: https://github.com/vmware-tanzu/velero/releases/latest
+[1]: https://github.com/adi-bhardwaj/velero-modified/releases/latest
 [2]: namespace.md
 [3]: restic.md
 [4]: on-premises.md
 [6]: velero-install.md#usage
-[7]: https://github.com/vmware-tanzu/velero/issues/2077
-[8]: https://github.com/vmware-tanzu/velero/issues/2311
+[7]: https://github.com/adi-bhardwaj/velero-modified/issues/2077
+[8]: https://github.com/adi-bhardwaj/velero-modified/issues/2311
 [9]: self-signed-certificates.md
 [10]: csi.md
-[11]: https://github.com/vmware-tanzu/velero/blob/main/pkg/apis/velero/v1/constants.go
+[11]: https://github.com/adi-bhardwaj/velero-modified/blob/main/pkg/apis/velero/v1/constants.go

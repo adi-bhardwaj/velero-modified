@@ -38,16 +38,16 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	kubeerrs "k8s.io/apimachinery/pkg/util/errors"
 
-	"github.com/vmware-tanzu/velero/internal/hook"
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/discovery"
-	velerov1client "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/typed/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/kuberesource"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/podexec"
-	"github.com/vmware-tanzu/velero/pkg/restic"
-	"github.com/vmware-tanzu/velero/pkg/util/collections"
+	"github.com/adi-bhardwaj/velero-modified/internal/hook"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/discovery"
+	velerov1client "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/typed/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/kuberesource"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/podexec"
+	"github.com/adi-bhardwaj/velero-modified/pkg/restic"
+	"github.com/adi-bhardwaj/velero-modified/pkg/util/collections"
 )
 
 // BackupVersion is the current backup major version for Velero.

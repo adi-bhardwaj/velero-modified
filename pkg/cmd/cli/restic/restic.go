@@ -19,8 +19,8 @@ package restic
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd/cli/restic/repo"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli/restic/repo"
 )
 
 func NewCommand(f client.Factory) *cobra.Command {

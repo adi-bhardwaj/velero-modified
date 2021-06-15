@@ -25,14 +25,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned/fake"
-	informers "github.com/vmware-tanzu/velero/pkg/generated/informers/externalversions"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	providermocks "github.com/vmware-tanzu/velero/pkg/plugin/velero/mocks"
-	velerotest "github.com/vmware-tanzu/velero/pkg/test"
-	"github.com/vmware-tanzu/velero/pkg/volume"
+	api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/fake"
+	informers "github.com/adi-bhardwaj/velero-modified/pkg/generated/informers/externalversions"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	providermocks "github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero/mocks"
+	velerotest "github.com/adi-bhardwaj/velero-modified/pkg/test"
+	"github.com/adi-bhardwaj/velero-modified/pkg/volume"
 )
 
 func defaultBackup() *builder.BackupBuilder {

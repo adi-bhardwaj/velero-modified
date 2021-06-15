@@ -30,8 +30,8 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 
-	velerov1api "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	clientset "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
+	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	clientset "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
 )
 
 // Factory knows how to create a VeleroClient and Kubernetes client.

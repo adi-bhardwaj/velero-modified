@@ -28,7 +28,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	veleroexec "github.com/vmware-tanzu/velero/pkg/util/exec"
+	veleroexec "github.com/adi-bhardwaj/velero-modified/pkg/util/exec"
 )
 
 const (

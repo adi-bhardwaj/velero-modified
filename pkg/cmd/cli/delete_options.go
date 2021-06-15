@@ -26,9 +26,9 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd/util/flag"
-	clientset "github.com/vmware-tanzu/velero/pkg/generated/clientset/versioned"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/util/flag"
+	clientset "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned"
 )
 
 // DeleteOptions contains parameters used for deleting a restore.

@@ -41,17 +41,17 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	velerov1 "github.com/vmware-tanzu/velero/pkg/apis/velero/v1"
-	"github.com/vmware-tanzu/velero/pkg/builder"
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/discovery"
-	"github.com/vmware-tanzu/velero/pkg/kuberesource"
-	"github.com/vmware-tanzu/velero/pkg/plugin/velero"
-	"github.com/vmware-tanzu/velero/pkg/restic"
-	"github.com/vmware-tanzu/velero/pkg/test"
-	testutil "github.com/vmware-tanzu/velero/pkg/test"
-	kubeutil "github.com/vmware-tanzu/velero/pkg/util/kube"
-	"github.com/vmware-tanzu/velero/pkg/volume"
+	velerov1 "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
+	"github.com/adi-bhardwaj/velero-modified/pkg/builder"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/discovery"
+	"github.com/adi-bhardwaj/velero-modified/pkg/kuberesource"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
+	"github.com/adi-bhardwaj/velero-modified/pkg/restic"
+	"github.com/adi-bhardwaj/velero-modified/pkg/test"
+	testutil "github.com/adi-bhardwaj/velero-modified/pkg/test"
+	kubeutil "github.com/adi-bhardwaj/velero-modified/pkg/util/kube"
+	"github.com/adi-bhardwaj/velero-modified/pkg/volume"
 )
 
 func TestBackedUpItemsMatchesTarballContents(t *testing.T) {
@@ -994,7 +994,7 @@ func TestBackupResourceCohabitation(t *testing.T) {
 // TestBackupUsesNewCohabitatingResourcesForEachBackup ensures that when two backups are
 // run that each include cohabitating resources, one copy of the relevant resources is
 // backed up in each backup. Verification is done by looking at the contents of the backup
-// tarball. This covers a specific issue that was fixed by https://github.com/vmware-tanzu/velero/pull/485.
+// tarball. This covers a specific issue that was fixed by https://github.com/adi-bhardwaj/velero-modified/pull/485.
 func TestBackupUsesNewCohabitatingResourcesForEachBackup(t *testing.T) {
 	h := newHarness(t)
 

@@ -34,10 +34,10 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	kbclient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/vmware-tanzu/velero/pkg/client"
-	"github.com/vmware-tanzu/velero/pkg/cmd"
-	"github.com/vmware-tanzu/velero/pkg/cmd/cli"
-	"github.com/vmware-tanzu/velero/pkg/install"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd"
+	"github.com/adi-bhardwaj/velero-modified/pkg/cmd/cli"
+	"github.com/adi-bhardwaj/velero-modified/pkg/install"
 )
 
 // uninstallOptions collects all the options for uninstalling Velero from a Kubernetes cluster.
