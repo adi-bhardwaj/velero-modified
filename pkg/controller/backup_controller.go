@@ -891,8 +891,9 @@ func encodeToJSONGzip(data interface{}, desc string) (*bytes.Buffer, []error) {
 	return buf, nil
 }
 
-func ProcessNetBackupBackup(bController interface{}, backup *pkgbackup.Request, mountPath string) error {
+func ProcessNetBackupBackup(bController interface{}, backup *velerov1api.Backup, mountPath string) error {
 	c := bController.(backupController)
 	c.logger.Info("initiating velero backup")
-	return c.runBackup(backup, mountPath, false)
+	request := c.prepareBackupRequest(backup)
+	return c.runBackup(request, mountPath, false)
 }

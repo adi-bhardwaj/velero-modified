@@ -1,16 +1,17 @@
 package server
 
 import (
-	"github.com/sirupsen/logrus"
+	velerov1apis "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
 	"github.com/adi-bhardwaj/velero-modified/pkg/backup"
 	"github.com/adi-bhardwaj/velero-modified/pkg/client"
 	"github.com/adi-bhardwaj/velero-modified/pkg/controller"
 	"github.com/adi-bhardwaj/velero-modified/pkg/persistence"
 	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
 	"github.com/adi-bhardwaj/velero-modified/pkg/podexec"
+	"github.com/sirupsen/logrus"
 )
 
-func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *backup.Request,
+func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *velerov1apis.Backup,
 	mountPath string, log *logrus.Logger) error {
 	serverConfig := getDefaultServerConfig()
 	s, err := newServer(factory, serverConfig, log)
