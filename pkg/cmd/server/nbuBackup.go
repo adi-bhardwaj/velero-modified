@@ -14,7 +14,7 @@ import (
 func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *velerov1apis.Backup,
 	mountPath string, log *logrus.Logger) error {
 	serverConfig := getDefaultServerConfig()
-	s, err := newServer(factory, serverConfig, log)
+	s, err := newServer(factory, serverConfig, true, log)
 	if err != nil {
 		log.WithError(err).Error("failed to create new velero server for request processing")
 		return err
