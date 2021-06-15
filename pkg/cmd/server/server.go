@@ -184,7 +184,7 @@ func NewCommand(f client.Factory) *cobra.Command {
 
 			f.SetBasename(fmt.Sprintf("%s-%s", c.Parent().Name(), c.Name()))
 
-			s, err := newServer(f, config, logger)
+			s, err := newServer(f, config, false, logger)
 			cmd.CheckError(err)
 
 			cmd.CheckError(s.run())
@@ -238,7 +238,7 @@ type server struct {
 	credentialFileStore                 credentials.FileStore
 }
 
-func newServer(f client.Factory, config serverConfig, logger *logrus.Logger) (*server, error) {
+func newServer(f client.Factory, config serverConfig, shouldUseAsSdk bool, logger *logrus.Logger) (*server, error) {
 	if config.clientQPS < 0.0 {
 		return nil, errors.New("client-qps must be positive")
 	}
@@ -264,9 +264,12 @@ func newServer(f client.Factory, config serverConfig, logger *logrus.Logger) (*s
 		return nil, err
 	}
 
-	pluginRegistry := clientmgmt.NewRegistry(config.pluginDir, logger, logger.Level)
-	if err := pluginRegistry.DiscoverPlugins(); err != nil {
-		return nil, err
+	var pluginRegistry clientmgmt.Registry
+	if !shouldUseAsSdk {
+		pluginRegistry = clientmgmt.NewRegistry(config.pluginDir, logger, logger.Level)
+		if err := pluginRegistry.DiscoverPlugins(); err != nil {
+			return nil, err
+		}
 	}
 
 	// cancelFunc is not deferred here because if it was, then ctx would immediately
@@ -291,8 +294,8 @@ func newServer(f client.Factory, config serverConfig, logger *logrus.Logger) (*s
 	}
 
 	scheme := runtime.NewScheme()
-	velerov1api.AddToScheme(scheme)
-	corev1api.AddToScheme(scheme)
+	_ = velerov1api.AddToScheme(scheme)
+	_ = corev1api.AddToScheme(scheme)
 
 	mgr, err := ctrl.NewManager(clientConfig, ctrl.Options{
 		Scheme: scheme,
