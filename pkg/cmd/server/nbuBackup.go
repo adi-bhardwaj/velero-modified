@@ -48,6 +48,12 @@ func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *velerov1apis
 
 	csiVSLister, csiVSCLister := s.getCSISnapshotListers()
 
+	kbClient, err := factory.KubebuilderClient()
+	if err != nil {
+		log.WithError(err).Error("failed to get kubebuilder client")
+		return err
+	}
+
 	backupController := controller.NewBackupController(
 		s.sharedInformerFactory.Velero().V1().Backups(),
 		s.veleroClient.VeleroV1(),
@@ -57,7 +63,8 @@ func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *velerov1apis
 		s.logLevel,
 		newPluginManager,
 		backupTracker,
-		s.mgr.GetClient(),
+		kbClient,
+		//s.mgr.GetClient(),
 		s.config.defaultBackupLocation,
 		s.config.defaultVolumesToRestic,
 		s.config.defaultBackupTTL,
