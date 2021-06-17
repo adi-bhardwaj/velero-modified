@@ -293,27 +293,33 @@ func newServer(f client.Factory, config serverConfig, shouldUseAsSdk bool, logge
 		}
 	}
 
-	scheme := runtime.NewScheme()
-	_ = velerov1api.AddToScheme(scheme)
-	_ = corev1api.AddToScheme(scheme)
+	var mgr manager.Manager
+	var credentialFileStore credentials.FileStore
 
-	mgr, err := ctrl.NewManager(clientConfig, ctrl.Options{
-		Scheme: scheme,
-	})
-	if err != nil {
-		cancelFunc()
-		return nil, err
-	}
+	if !shouldUseAsSdk {
+		scheme := runtime.NewScheme()
+		_ = velerov1api.AddToScheme(scheme)
+		_ = corev1api.AddToScheme(scheme)
 
-	credentialFileStore, err := credentials.NewNamespacedFileStore(
-		mgr.GetClient(),
-		f.Namespace(),
-		defaultCredentialsDirectory,
-		filesystem.NewFileSystem(),
-	)
-	if err != nil {
-		cancelFunc()
-		return nil, err
+		mgr, err = ctrl.NewManager(clientConfig, ctrl.Options{
+			Scheme:             scheme,
+			Port: 8081,
+		})
+		if err != nil {
+			cancelFunc()
+			return nil, err
+		}
+
+		credentialFileStore, err = credentials.NewNamespacedFileStore(
+			mgr.GetClient(),
+			f.Namespace(),
+			defaultCredentialsDirectory,
+			filesystem.NewFileSystem(),
+		)
+		if err != nil {
+			cancelFunc()
+			return nil, err
+		}
 	}
 
 	s := &server{
