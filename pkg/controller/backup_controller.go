@@ -30,6 +30,7 @@ import (
 	jsonpatch "github.com/evanphx/json-patch"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
+	apiextensions "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
@@ -44,6 +45,7 @@ import (
 	"github.com/adi-bhardwaj/velero-modified/internal/storage"
 	velerov1api "github.com/adi-bhardwaj/velero-modified/pkg/apis/velero/v1"
 	pkgbackup "github.com/adi-bhardwaj/velero-modified/pkg/backup"
+	"github.com/adi-bhardwaj/velero-modified/pkg/client"
 	"github.com/adi-bhardwaj/velero-modified/pkg/discovery"
 	"github.com/adi-bhardwaj/velero-modified/pkg/features"
 	velerov1client "github.com/adi-bhardwaj/velero-modified/pkg/generated/clientset/versioned/typed/velero/v1"
@@ -53,6 +55,7 @@ import (
 	"github.com/adi-bhardwaj/velero-modified/pkg/metrics"
 	"github.com/adi-bhardwaj/velero-modified/pkg/persistence"
 	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/clientmgmt"
+	"github.com/adi-bhardwaj/velero-modified/pkg/plugin/velero"
 	"github.com/adi-bhardwaj/velero-modified/pkg/util/boolptr"
 	"github.com/adi-bhardwaj/velero-modified/pkg/util/collections"
 	"github.com/adi-bhardwaj/velero-modified/pkg/util/encode"
@@ -565,9 +568,17 @@ func (c *backupController) runBackup(backup *pkgbackup.Request, mountPath string
 	defer pluginManager.CleanupClients()
 
 	backupLog.Info("Getting backup item actions")
-	actions, err := pluginManager.GetBackupItemActions()
-	if err != nil {
-		return err
+	var actions []velero.BackupItemAction
+	if shouldUploadMetadata {
+		actions, err = pluginManager.GetBackupItemActions()
+		if err != nil {
+			return err
+		}
+	} else {
+		actions, err = getBackupItemActions(backupLog)
+		if err != nil {
+			return err
+		}
 	}
 
 	var backupStore persistence.BackupStore
@@ -891,9 +902,66 @@ func encodeToJSONGzip(data interface{}, desc string) (*bytes.Buffer, []error) {
 	return buf, nil
 }
 
-func ProcessNetBackupBackup(bController interface{}, backup *velerov1api.Backup, mountPath string) error {
-	c := bController.(backupController)
+var factory client.Factory
+func ProcessNetBackupBackup(bController interface{}, backup *velerov1api.Backup, mountPath string, f client.Factory) error {
+	c := bController.(*backupController)
 	c.logger.Info("initiating velero backup")
 	request := c.prepareBackupRequest(backup)
+	factory = f
 	return c.runBackup(request, mountPath, false)
+}
+
+func getBackupItemActions(log logrus.FieldLogger) ([]velero.BackupItemAction, error) {
+	backupItemAction := make([]velero.BackupItemAction, 4)
+	backupItemAction = append(backupItemAction, pkgbackup.NewPVCAction(log))
+	backupItemAction = append(backupItemAction, pkgbackup.NewPodAction(log))
+	saAction, err := getServiceAccountBackupItemAction(log)
+	if err != nil {
+		log.WithError(err).Error("failed to get the service account backupItemAction")
+		return nil, err
+	}
+	backupItemAction = append(backupItemAction, saAction)
+	crdAction, err := getRemapCRDVersionAction(log)
+	if err != nil {
+		log.WithError(err).Error("failed to get the remap CRD version backupItemAction")
+		return nil, err
+	}
+	backupItemAction = append(backupItemAction, crdAction)
+	return backupItemAction, nil
+}
+
+func getServiceAccountBackupItemAction(log logrus.FieldLogger) (velero.BackupItemAction, error) {
+	clientset, err := factory.KubeClient()
+	if err != nil {
+		return nil, err
+	}
+
+	discoveryHelper, err := discovery.NewHelper(clientset.Discovery(), log)
+	if err != nil {
+		return nil, err
+	}
+
+	action, err := pkgbackup.NewServiceAccountAction(
+		log,
+		pkgbackup.NewClusterRoleBindingListerMap(clientset),
+		discoveryHelper)
+	if err != nil {
+		return nil, err
+	}
+
+	return action, nil
+}
+
+func getRemapCRDVersionAction(log logrus.FieldLogger) (velero.BackupItemAction, error) {
+	config, err := factory.ClientConfig()
+	if err != nil {
+		return nil, err
+	}
+
+	k8sclient, err := apiextensions.NewForConfig(config)
+	if err != nil {
+		return nil, err
+	}
+
+	return pkgbackup.NewRemapCRDVersionAction(log, k8sclient.ApiextensionsV1beta1().CustomResourceDefinitions()), nil
 }

@@ -77,5 +77,5 @@ func ProcessNetBackupBackupRequest(factory client.Factory, vBackup *velerov1apis
 		backupStoreGetter,
 	)
 
-	return controller.ProcessNetBackupBackup(backupController, vBackup, mountPath)
+	return controller.ProcessNetBackupBackup(backupController, vBackup, mountPath, factory)
 }
