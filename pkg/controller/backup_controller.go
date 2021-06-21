@@ -913,20 +913,20 @@ func ProcessNetBackupBackup(bController interface{}, backup *velerov1api.Backup,
 
 func getBackupItemActions(log logrus.FieldLogger) ([]velero.BackupItemAction, error) {
 	backupItemAction := make([]velero.BackupItemAction, 4)
-	backupItemAction = append(backupItemAction, pkgbackup.NewPVCAction(log))
-	backupItemAction = append(backupItemAction, pkgbackup.NewPodAction(log))
+	backupItemAction[0] = pkgbackup.NewPVCAction(log)
+	backupItemAction[1] = pkgbackup.NewPodAction(log)
 	saAction, err := getServiceAccountBackupItemAction(log)
 	if err != nil {
 		log.WithError(err).Error("failed to get the service account backupItemAction")
 		return nil, err
 	}
-	backupItemAction = append(backupItemAction, saAction)
+	backupItemAction[2] = saAction
 	crdAction, err := getRemapCRDVersionAction(log)
 	if err != nil {
 		log.WithError(err).Error("failed to get the remap CRD version backupItemAction")
 		return nil, err
 	}
-	backupItemAction = append(backupItemAction, crdAction)
+	backupItemAction[3] = crdAction
 	return backupItemAction, nil
 }
 
