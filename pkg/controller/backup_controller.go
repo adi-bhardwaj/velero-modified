@@ -786,7 +786,7 @@ func persistBackup(backup *pkgbackup.Request,
 		const backupLogFileName = "backupLog.tar.gz"
 		const backupResourceListFileName = "backupResourceList.tar.gz"
 		var currentBackupDir = mountPath + backupDirName + "/" + backup.Name
-		if err := os.MkdirAll(currentBackupDir, 0644); err != nil {
+		if err := os.MkdirAll(currentBackupDir, 0755); err != nil {
 			persistErrs = append(persistErrs, err)
 			return persistErrs
 		}
@@ -857,7 +857,7 @@ func persistBackup(backup *pkgbackup.Request,
 		}
 		log.Info("writing backupResourceList to the local storage")
 		if err := ioutil.WriteFile(currentBackupDir + "/" + backupResourceListFileName, backupResourceList.Bytes(),
-			0644); err != nil {
+			0755); err != nil {
 			log.WithError(err).Error("failed to write the backupResourceList data to local storage")
 			persistErrs = append(persistErrs, err)
 		}
