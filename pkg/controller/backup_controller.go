@@ -801,28 +801,21 @@ func persistBackup(backup *pkgbackup.Request,
 			log.WithError(err).Error("failed to create the backupContent file on the local storage")
 			persistErrs = append(persistErrs, err)
 		} else {
-			defer func(output *os.File) {
-				err := output.Close()
-				if err != nil {
-					log.WithError(err).Error("error closing the backupContent file")
-				}
-			}(output)
-			var buf = make([]byte, 1000)
-			for {
-				n, err := backupContents.Read(buf)
-				if err != nil && err != io.EOF {
-					log.WithError(err).Error("error reading the backupContent file")
+			if buf, err := ioutil.ReadAll(backupContents); err != nil {
+				log.Debugf("read %d bytes from backupContents file", len(buf))
+				if n, err := output.Write(buf); err != nil {
+					log.Debugf("wrote %d bytes of backupContents to the file", n)
+					if n != len(buf) {
+						log.Error("unable to copy the entire file contents")
+						persistErrs = append(persistErrs, errors.New("unable to copy the entire file contents"))
+					}
+				} else {
+					log.WithError(err).Error("error writing the backupContents to the local storage")
 					persistErrs = append(persistErrs, err)
-					break
 				}
-				if n == 0 {
-					break
-				}
-				if _, err = output.Write(buf[:n]); err != nil {
-					log.WithError(err).Error("error writing to the backupContent file")
-					persistErrs = append(persistErrs, err)
-					break
-				}
+			} else {
+				log.WithError(err).Error("failed to read backupContents")
+				persistErrs = append(persistErrs, err)
 			}
 		}
 		log.Info("writing backupLog to the local storage")
@@ -831,28 +824,21 @@ func persistBackup(backup *pkgbackup.Request,
 			log.WithError(err).Error("failed to create the backupLog file on the local storage")
 			persistErrs = append(persistErrs, err)
 		} else {
-			defer func(outputLog *os.File) {
-				err := outputLog.Close()
-				if err != nil {
-					log.WithError(err).Error("error closing the backupLog file")
-				}
-			}(outputLog)
-			var buf = make([]byte, 1000)
-			for {
-				n, err := backupLog.Read(buf)
-				if err != nil && err != io.EOF {
-					log.WithError(err).Error("error reading the backupLog file")
+			if buf, err := ioutil.ReadAll(backupLog); err != nil {
+				log.Debugf("read %d bytes from backupLog file", len(buf))
+				if n, err := outputLog.Write(buf); err != nil {
+					log.Debugf("wrote %d bytes of backupLog to the file", n)
+					if n != len(buf) {
+						log.Error("unable to copy the entire file contents")
+						persistErrs = append(persistErrs, errors.New("unable to copy the entire file contents"))
+					}
+				} else {
+					log.WithError(err).Error("error writing the backupLog to the local storage")
 					persistErrs = append(persistErrs, err)
-					break
 				}
-				if n == 0 {
-					break
-				}
-				if _, err = outputLog.Write(buf[:n]); err != nil {
-					log.WithError(err).Error("error writing to the backupLog file")
-					persistErrs = append(persistErrs, err)
-					break
-				}
+			} else {
+				log.WithError(err).Error("failed to read backupLog")
+				persistErrs = append(persistErrs, err)
 			}
 		}
 		log.Info("writing backupResourceList to the local storage")
